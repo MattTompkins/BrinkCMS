@@ -11,9 +11,7 @@ Route::get('/', function () {
 
 
 /** Frontend Routes */
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 /** Auth Routes */
 Route::middleware('auth')->group(function () {
