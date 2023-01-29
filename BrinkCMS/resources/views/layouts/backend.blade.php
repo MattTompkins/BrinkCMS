@@ -11,7 +11,7 @@
 
         @yield('headerStyles')
         @yield('headerScripts')
-        
+
     </head>
     <body class="sb-nav-fixed">
         @include('backend.components.topnav')
@@ -21,7 +21,8 @@
                 <main>
                     <div class="container-fluid px-4">
                         @include('backend.components.title')
-                       
+
+                        @yield('content')
                     </div>
                 </main>
                @include('backend.components.footer')
