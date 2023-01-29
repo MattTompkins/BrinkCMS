@@ -8,7 +8,8 @@
         <title>Dashboard</title>
         <link href="css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}" />
-
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        
         @yield('headerStyles')
         @yield('headerScripts')
 
