@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 /** Homepage */
 Route::get('/', function () {
-    return view('welcome');
+    return view('homepage');
 });
 
 
@@ -22,7 +22,19 @@ Route::middleware('auth')->group(function () {
 });
 
 
-/** Backend Routes */
 
+
+/** Backend Routes */
+Route::middleware('auth')->group(function () {
+    // /admin/dashboard
+    // /admin/categories
+    // /admin/tags
+    // /admin/posts
+
+    // /admin/pages
+    // /admin/settings
+    // /admin/nalytics
+    // /admin/users
+});
 
 require __DIR__ . '/auth.php';
