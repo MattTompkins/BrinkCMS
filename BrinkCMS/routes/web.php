@@ -10,7 +10,7 @@ Route::get('/', function () {
 });
 
 
-/** Frontend Routes */
+/** Frontend Routes - to use SPLADE middleware for SPA */
 
 
 /** Auth Routes */
