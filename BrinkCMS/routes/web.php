@@ -2,41 +2,67 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\DashboardController;
 
-/** Homepage */
-Route::get('/', function () {
-    return view('homepage');
-});
-
-
-/** Frontend Routes - to use SPLADE middleware for SPA */
-
-
-/** Auth Routes */
+// Backend routes
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // Dashboard
+    Route::get('/admin', function () {
+        return view('backend.dashboard');
+    });
+    // Article routes
+
+    // Category Routes
+
+    // Tag Routes
+
 });
 
+// Front end & Auth routes
+Route::middleware('splade')->group(function () {
+
+    /**
+     * Standard site routes
+     */
+    Route::get('/', function () {
+        return view('homepage');
+    });
+
+    // Articles
+
+    // Categories
+
+    // Tags
+
+    // Authors
+
+    // Pages
+
+    /**
+     * Auth and user account routes
+     */
+    Route::middleware('auth')->group(function () {
+        // Route for upon user login (goes to homepage)
+        Route::get('/', function () {
+            return view('homepage');
+        })->middleware(['verified'])->name('dashboard');
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
 
 
+    /**
+     * Utility for Splade
+     */
 
-/** Backend Routes - New middleware required to block off to those without permission, and return a 404 */
-Route::middleware('auth')->group(function () {
-    Route::get('/admin', [DashboardController::class, 'view'])->name('backend.dashboard');
-    Route::get('/admin/dashboard', [DashboardController::class, 'view'])->name('backend.dashboard');
-    //  /admin = /dashboard
-    // /admin/dashboard
-    // /admin/categories
-    // /admin/tags
-    // /admin/posts
+    // Registers routes to support password confirmation in Form and Link components...
+    Route::spladePasswordConfirmation();
+    // Registers routes to support Table Bulk Actions and Exports...
+    Route::spladeTable();
+    // Registers routes to support async File Uploads with Filepond...
+    Route::spladeUploads();
 
-    // /admin/pages
-    // /admin/settings
-    // /admin/nalytics
-    // /admin/users
+
+    require __DIR__ . '/auth.php';
 });
-
-require __DIR__ . '/auth.php';

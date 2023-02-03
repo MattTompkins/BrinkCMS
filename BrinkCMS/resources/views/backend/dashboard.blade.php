@@ -1,9 +1,5 @@
 @extends('layouts.backend')
 
-@section('title')
-    Dashboard
-@endsection
-
-@section('content')
-    Backend Dashboard Content
+@section('space')
+    abc    
 @endsection
