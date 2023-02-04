@@ -6,19 +6,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
+use App\Models\Categoroies;
+use App\Models\Tags;
+use App\Models\SEOandMeta;
+
 class Articles extends Model
 {
     use HasFactory;
 
     public $table = "articles";
 
+
+
     /**
-     * Get the user associated with the Articles
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * Data to associate with Articles
+     *  - Categories
+     *  - Tags
+     *  - Author
+     *  - SEO and Meta data
+     *  - Likes & Comments (Future)
      */
-    public function user(): HasOne
-    {
-        return $this->hasOne(User::class, 'foreign_key', 'local_key');
-    }
 }

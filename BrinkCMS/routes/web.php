@@ -3,6 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomepageController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\TagController;
+
 
 // Backend routes
 Route::middleware('auth')->group(function () {
@@ -33,13 +36,16 @@ Route::middleware('splade')->group(function () {
 
     // Articles
 
-    // Categories
 
-    // Tags
+    // Categories, Categories and Authors
+    Route::get('/category/{slug}', [CategoryController::class, 'display']);
+    Route::get('/tag/{slug}', [TagController::class, 'display']);
 
-    // Authors
+    // TO DO: logic for authors to be determined between models and controller 
+    //  -  uses standard user data but will draw details from another table to
+    //     keep users DB table clear of said data
 
-    // Pages
+    // Pages ( To use several templates, predetermined by a setting in the BE )
 
     /**
      * Auth and user account routes
