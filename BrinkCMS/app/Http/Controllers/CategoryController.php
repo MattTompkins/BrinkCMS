@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function display($slug)
     {
-        echo "Category front end";
+        $categoryData = Categoroies::where('slug', $slug)->first();
+        return view('category-style-1')->with('categoryData', $categoryData);
     }
 
     /**

@@ -13,13 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('top_navigation', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->string('slug');
-            $table->longText('description')->l->nullable();
-            $table->string('mainImage')->nullable();
+            $table->string('linkText');
+            $table->string('linkURL')->nullable();
+            $table->string('position')->default('main_nav_bar__simple_link');
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('top_navigations');
     }
 };

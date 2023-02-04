@@ -37,35 +37,35 @@
                             <li>
                                 <a class="hover-flip-item-wrapper" href="#">
                                     <span class="hover-flip-item">
-                                <span data-text="Contact Us">Contact Us</span>
+                                        <span data-text="Contact Us">Contact Us</span>
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a class="hover-flip-item-wrapper" href="#">
                                     <span class="hover-flip-item">
-                                <span data-text="Terms of Use">Terms of Use</span>
+                                        <span data-text="Terms of Use">Terms of Use</span>
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a class="hover-flip-item-wrapper" href="#">
                                     <span class="hover-flip-item">
-                                <span data-text="AdChoices">AdChoices</span>
+                                        <span data-text="AdChoices">AdChoices</span>
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a class="hover-flip-item-wrapper" href="#">
                                     <span class="hover-flip-item">
-                                <span data-text="Advertise with Us">Advertise with Us</span>
+                                        <span data-text="Advertise with Us">Advertise with Us</span>
                                     </span>
                                 </a>
                             </li>
                             <li>
                                 <a class="hover-flip-item-wrapper" href="#">
                                     <span class="hover-flip-item">
-                                <span data-text="Blogar Store">Blogar Store</span>
+                                        <span data-text="Blogar Store">Blogar Store</span>
                                     </span>
                                 </a>
                             </li>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-lg-3 col-md-12">
                     <div class="copyright-right text-start text-lg-end mt_md--20 mt_sm--20">
-                        <p class="b3">All Rights Reserved © {{ date( "Y" ) }}</p>
+                        <p class="b3">© {{ config('app.name') }} {{ date('Y') }}. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
