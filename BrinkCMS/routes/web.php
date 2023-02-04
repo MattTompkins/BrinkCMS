@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\frontend\HomepageController;
 
 // Backend routes
 Route::middleware('auth')->group(function () {
@@ -28,6 +29,8 @@ Route::middleware('splade')->group(function () {
         return view('homepage');
     });
 
+    Route::get('/', [HomepageController::class, 'index'])->name('home');
+
     // Articles
 
     // Categories
@@ -43,9 +46,7 @@ Route::middleware('splade')->group(function () {
      */
     Route::middleware('auth')->group(function () {
         // Route for upon user login (goes to homepage)
-        Route::get('/', function () {
-            return view('homepage');
-        })->middleware(['verified'])->name('dashboard');
+        Route::get('/', [HomepageController::class, 'index'])->middleware(['verified'])->name('dashboard');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

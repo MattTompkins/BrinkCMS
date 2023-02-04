@@ -2,19 +2,18 @@
 
 @section('content')
 
-    
 
-        <!-- Start Banner Area -->
-        <h1 class="d-none">Home Life Style Blog</h1>
-        <div class="slider-area bg-color-grey ptb--80">
-            <div class="axil-slide slider-style-2 plr--135 plr_lg--30 plr_md--30 plr_sm--30">
-                <div class="row row--10">
-                    <div class="col-lg-12 col-xl-6 col-md-12 col-12">
+        <h1 class="d-none">Home Seo Blog</h1>
+        <div class="axil-seo-post-banner seoblog-banner axil-section-gap bg-color-grey">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-7 col-md-12 col-12">
+                        
                         <!-- Start Post Grid  -->
-                        <div class="content-block post-grid post-grid-transparent post-overlay-bottom">
+                        <div class="content-block post-grid post-grid-large">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="https://media.istockphoto.com/id/1265900812/photo/aerial-view-of-london-and-the-tower-bridge.jpg?s=612x612&w=0&k=20&c=-2j6QgZyeveMcGzuWmgLYqC7zXTkcSBnayuZsDqs5KQ=" alt="Post Images">
+                                <a href="{{ $homepageData['featuredPost']->url }}">
+                                    <img src="{{ $homepageData['featuredPost']->mainImage }}" alt="Post Images">
                                 </a>
                             </div>
                             <div class="post-grid-content">
@@ -23,134 +22,127 @@
                                         <div class="post-cat-list">
                                             <a class="hover-flip-item-wrapper" href="#">
                                                 <span class="hover-flip-item">
-                                                    <span data-text="FEATURED POST">FEATURED POST</span>
+                                                    <span data-text="{{ $homepageData['featuredPost']->categories }}">{{ $homepageData['featuredPost']->categories }}</span>
                                                 </span>
                                             </a>
                                         </div>
                                     </div>
-                                    <h3 class="title"><a href="post-details.html">Fashion portrait of young businessman
-                                            handsome model man in casual cloth.</a></h3>
+                                    <h3 class="title"><a href="{{ $homepageData['featuredPost']->url }}">{{ $homepageData['featuredPost']->title }}</a></h3>
+                                    <div class="post-meta-wrapper">
+                                        <div class="post-meta">
+                                            <div class="post-author-avatar border-rounded">
+                                                <img src="assets/images/post-images/author/author-image-2.png" alt="Author Images">
+                                            </div>
+                                            <div class="content">
+                                                <h6 class="post-author-name">
+                                                    <a class="hover-flip-item-wrapper" href="author.html">
+                                                        <span class="hover-flip-item">
+                                                            <span data-text="Rahabi Khan">Rahabi Khan</span>
+                                                        </span>
+                                                    </a>
+                                                </h6>
+                                                <ul class="post-meta-list">
+                                                    <li>{{ $homepageData['featuredPost']->publishDateTime }}</li>
+                                                    <li>300k Views</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Start Post Grid  -->
                     </div>
-                    <div class="col-lg-12 col-xl-6 col-md-12 col-12 mt_lg--20 mt_md--20 mt_sm--20">
-                        <div class="row row--10">
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12">
-                                <!-- Start Post Grid  -->
-                                <div class="content-block post-grid post-grid-transparent post-grid-small post-overlay-bottom">
-                                    <div class="post-thumbnail">
-                                        <a href="post-details.html">
-                                            <img src="https://media.istockphoto.com/id/1265900812/photo/aerial-view-of-london-and-the-tower-bridge.jpg?s=612x612&w=0&k=20&c=-2j6QgZyeveMcGzuWmgLYqC7zXTkcSBnayuZsDqs5KQ=" alt="Post Images">
+
+                    <div class="col-xl-5 col-lg-5 col-md-12 col-12 mt_md--30 mt_sm--30">
+                        <!-- Start Single Post  -->
+                        <div class="content-block post-medium post-medium-border">
+                            <div class="post-thumbnail">
+                                <a href="post-details.html">
+                                    <img src="assets/images/post-images/post-seo-sm-01.jpg" alt="Post Images">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-cat">
+                                    <div class="post-cat-list">
+                                        <a class="hover-flip-item-wrapper" href="#">
+                                            <span class="hover-flip-item">
+                                                <span data-text="BUSINESS">BUSINESS</span>
+                                            </span>
                                         </a>
                                     </div>
-                                    <div class="post-grid-content">
-                                        <div class="post-content">
-                                            <div class="post-cat">
-                                                <div class="post-cat-list">
-                                                    <a class="hover-flip-item-wrapper" href="#">
-                                                        <span class="hover-flip-item">
-                                                            <span data-text="TRAVEL">TRAVEL</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <h5 class="title"><a href="post-details.html">The beautiful girl standing on
-                                                    a balcony of apartments looking at the seaside. </a></h5>
-                                        </div>
-                                    </div>
                                 </div>
-                                <!-- Start Post Grid  -->
+                                <h4 class="title"><a href="post-details.html">How to craft great page titles for SEO</a></h4>
                             </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-6 mt_mobile--20 col-12">
-                                <!-- Start Post Grid  -->
-                                <div class="content-block post-grid post-grid-transparent post-grid-small post-overlay-bottom">
-                                    <div class="post-thumbnail">
-                                        <a href="post-details.html">
-                                            <img src="https://media.istockphoto.com/id/1265900812/photo/aerial-view-of-london-and-the-tower-bridge.jpg?s=612x612&w=0&k=20&c=-2j6QgZyeveMcGzuWmgLYqC7zXTkcSBnayuZsDqs5KQ=" alt="Post Images">
-                                        </a>
-                                    </div>
-                                    <div class="post-grid-content">
-                                        <div class="post-content">
-                                            <div class="post-cat">
-                                                <div class="post-cat-list">
-                                                    <a class="hover-flip-item-wrapper" href="#">
-                                                        <span class="hover-flip-item">
-                                                            <span data-text="TRAVEL">TRAVEL</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <h5 class="title"><a href="post-details.html">A good traveler has no fixed
-                                                    plans, and is not intent on arriving. </a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Start Post Grid  -->
-                            </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt--20">
-                                <!-- Start Post Grid  -->
-                                <div class="content-block post-grid post-grid-transparent post-grid-small post-overlay-bottom">
-                                    <div class="post-thumbnail">
-                                        <a href="post-details.html">
-                                            <img src="https://media.istockphoto.com/id/1265900812/photo/aerial-view-of-london-and-the-tower-bridge.jpg?s=612x612&w=0&k=20&c=-2j6QgZyeveMcGzuWmgLYqC7zXTkcSBnayuZsDqs5KQ=" alt="Post Images">
-                                        </a>
-                                    </div>
-                                    <div class="post-grid-content">
-                                        <div class="post-content">
-                                            <div class="post-cat">
-                                                <div class="post-cat-list">
-                                                    <a class="hover-flip-item-wrapper" href="#">
-                                                        <span class="hover-flip-item">
-                                                            <span data-text="TRAVEL">TRAVEL</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <h5 class="title"><a href="post-details.html">A good traveler has no fixed
-                                                    plans, and is not intent on arriving.</a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Start Post Grid  -->
-                            </div>
-
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-12 mt--20">
-                                <!-- Start Post Grid  -->
-                                <div class="content-block post-grid post-grid-transparent post-grid-small post-overlay-bottom">
-                                    <div class="post-thumbnail">
-                                        <a href="post-details.html">
-                                            <img src="https://media.istockphoto.com/id/1265900812/photo/aerial-view-of-london-and-the-tower-bridge.jpg?s=612x612&w=0&k=20&c=-2j6QgZyeveMcGzuWmgLYqC7zXTkcSBnayuZsDqs5KQ=" alt="Post Images">
-                                        </a>
-                                    </div>
-                                    <div class="post-grid-content">
-                                        <div class="post-content">
-                                            <div class="post-cat">
-                                                <div class="post-cat-list">
-                                                    <a class="hover-flip-item-wrapper" href="#">
-                                                        <span class="hover-flip-item">
-                                                            <span data-text="ACCESSORY">ACCESSORY</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <h5 class="title"><a href="post-details.html">Fashion portrait of young
-                                                    businessman handsome model man in casual cloth.</a></h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Start Post Grid  -->
-                            </div>
-
                         </div>
+                        <!-- End Single Post  -->
+                        <!-- Start Single Post  -->
+                        <div class="content-block post-medium post-medium-border">
+                            <div class="post-thumbnail">
+                                <a href="post-details.html">
+                                    <img src="assets/images/post-images/post-seo-sm-02.jpg" alt="Post Images">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-cat">
+                                    <div class="post-cat-list">
+                                        <a class="hover-flip-item-wrapper" href="#">
+                                            <span class="hover-flip-item">
+                                                <span data-text="MARKETING">MARKETING</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <h4 class="title"><a href="post-details.html">Learn What Marketing Is and How It Is Used</a></h4>
+                            </div>
+                        </div>
+                        <!-- End Single Post  -->
+                        <!-- Start Single Post  -->
+                        <div class="content-block post-medium post-medium-border">
+                            <div class="post-thumbnail">
+                                <a href="post-details.html">
+                                    <img src="assets/images/post-images/post-seo-sm-03.jpg" alt="Post Images">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-cat">
+                                    <div class="post-cat-list">
+                                        <a class="hover-flip-item-wrapper" href="#">
+                                            <span class="hover-flip-item">
+                                                <span data-text="DIGITAL SERVICE">DIGITAL SERVICE</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <h4 class="title"><a href="post-details.html">How to use your keyphrase in the SEO title</a></h4>
+                            </div>
+                        </div>
+                        <!-- End Single Post  -->
+                        <!-- Start Single Post  -->
+                        <div class="content-block post-medium post-medium-border">
+                            <div class="post-thumbnail">
+                                <a href="post-details.html">
+                                    <img src="assets/images/post-images/post-seo-sm-04.jpg" alt="Post Images">
+                                </a>
+                            </div>
+                            <div class="post-content">
+                                <div class="post-cat">
+                                    <div class="post-cat-list">
+                                        <a class="hover-flip-item-wrapper" href="#">
+                                            <span class="hover-flip-item">
+                                                <span data-text="BUSINSS KEY">BUSINSS KEY</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <h4 class="title"><a href="post-details.html">Facebook for Business: Marketing on Facebook</a></h4>
+                            </div>
+                        </div>
+                        <!-- End Single Post  -->
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Banner Area -->
-
 
 @endsection
