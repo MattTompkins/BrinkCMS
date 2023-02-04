@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\frontend\HomepageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\Frontend\ArticleController;
 
 
 // Backend routes
@@ -35,7 +36,7 @@ Route::middleware('splade')->group(function () {
     Route::get('/', [HomepageController::class, 'index'])->name('home');
 
     // Articles
-
+    Route::get('/article/{slug}', [ArticleController::class, 'display']);
 
     // Categories, Categories and Authors
     Route::get('/category/{slug}', [CategoryController::class, 'display']);

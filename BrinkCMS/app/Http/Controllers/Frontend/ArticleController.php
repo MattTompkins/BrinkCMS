@@ -20,8 +20,8 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function display($slug)
     {
-        //
+        return view('article')->with('slug', $slug);
     }
 }

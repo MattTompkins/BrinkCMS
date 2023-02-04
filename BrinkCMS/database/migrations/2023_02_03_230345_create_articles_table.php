@@ -23,7 +23,7 @@ return new class extends Migration
             $table->dateTime('publishDateTime')->nullable();
             $table->string('categories')->nullable();
             $table->string('tags')->nullable();
-            $table->string('url')->nullable();
+            $table->string('slug')->nullable();
         });
     }
 
