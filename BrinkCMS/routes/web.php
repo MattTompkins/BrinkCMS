@@ -8,7 +8,12 @@ use App\Http\Controllers\TagController;
 use App\Http\Controllers\Frontend\ArticleController;
 
 
-// Backend routes
+/**
+ * Backend and admin dashboard routes
+ * 
+ *   TO DO: Create another middleware to only allow specified user
+ *          groups to enter this part of the site, else, serve 404. 
+ */
 Route::middleware('auth')->group(function () {
 
     // Dashboard
@@ -23,15 +28,14 @@ Route::middleware('auth')->group(function () {
 
 });
 
-// Front end & Auth routes
+/**
+ *  Site front end and user auth routes
+ */
 Route::middleware('splade')->group(function () {
 
     /**
      * Standard site routes
      */
-    Route::get('/', function () {
-        return view('homepage');
-    });
 
     Route::get('/', [HomepageController::class, 'index'])->name('home');
 
@@ -53,7 +57,7 @@ Route::middleware('splade')->group(function () {
      */
     Route::middleware('auth')->group(function () {
         // Route for upon user login (goes to homepage)
-        Route::get('/', [HomepageController::class, 'index'])->middleware(['verified'])->name('dashboard');
+        Route::get('/dashboard', [HomepageController::class, 'index'])->middleware(['verified'])->name('dashboard');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
         Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

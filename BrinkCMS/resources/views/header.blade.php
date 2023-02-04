@@ -9,7 +9,14 @@
                                 <ul class="header-top-date liststyle d-flex flrx-wrap align-items-center mr--20">
                                     <li><a href="#">{{ date('d M, Y') }}</a></li>
                                 </ul>
+
                                 <ul class="header-top-nav liststyle d-flex flrx-wrap align-items-center">
+                                    @if (Auth::user())
+                                        <li>
+                                            <Link href="/profile">Welcome, {{ Auth::User()->name }}!
+                                            </Link>
+                                        </li>
+                                    @endif
                                     <li><a href="#">Advertisement</a></li>
                                     <li><a href="#">About</a></li>
                                     <li><a href="#">Contact</a></li>
@@ -817,10 +824,28 @@
                                     </form>
                                 </div>
                                 <ul class="metabar-block">
-                                    <li class="icon"><a href="#"><i class="fas fa-bookmark"></i></a></li>
-                                    <li class="icon"><a href="#"><i class="fas fa-bell"></i></a></li>
-                                    <li><a href="#"><img src="assets/images/others/author.png"
-                                                alt="Author Images"></a></li>
+                                    @if (Auth::user())
+                                        <li class="icon">
+                                            <Link href="#">
+                                            <i class="fas fa-bookmark"></i>
+                                            </Link>
+                                        </li>
+                                        <li class="icon">
+                                            <Link href="#">
+                                            <i class="fas fa-bell"></i>
+                                            </Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/profile">
+                                            <img src="{{ Auth::user()->profileImage }}"
+                                                alt="{{ Auth::user()->name }} profile image">
+                                            </Link>
+                                        </li>
+                                    @else
+                                        <li class="sign-in">
+                                            <Link href="/login">Sign In</Link>
+                                        </li>
+                                    @endif
                                 </ul>
                                 <!-- Start Hamburger Menu  -->
                                 <div class="hamburger-menu d-block d-xl-none">

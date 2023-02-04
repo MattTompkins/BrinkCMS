@@ -10,24 +10,27 @@
                     <!-- Start Post Grid  -->
                     <div class="content-block post-grid post-grid-large">
                         <div class="post-thumbnail">
-                            <a href="/article/{{ $homepageData['featuredPost']->slug }}">
-                                <img src="{{ $homepageData['featuredPost']->mainImage }}" alt="Post Images">
-                            </a>
+                            <Link href="{{ $homepageData['featuredPost']->slug }}">
+                            <img src="{{ $homepageData['featuredPost']->mainImage }}" alt="Post Images">
+                            </Link>
                         </div>
                         <div class="post-grid-content">
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="#">
-                                            <span class="hover-flip-item">
-                                                <span
-                                                    data-text="{{ $homepageData['featuredPost']->categories }}">{{ $homepageData['featuredPost']->categories }}</span>
-                                            </span>
-                                        </a>
+                                        <Link class="hover-flip-item-wrapper"
+                                            href="{{ $homepageData['featuredPost']->slug }}">
+                                        <span class="hover-flip-item">
+                                            <span
+                                                data-text="{{ $homepageData['featuredPost']->categories }}">{{ $homepageData['featuredPost']->categories }}</span>
+                                        </span>
+                                        </Link>
                                     </div>
                                 </div>
-                                <h3 class="title"><a
-                                        href="{{ $homepageData['featuredPost']->slug }}">{{ $homepageData['featuredPost']->title }}</a>
+                                <h3 class="title">
+                                    <Link href="{{ $homepageData['featuredPost']->slug }}">
+                                    {{ $homepageData['featuredPost']->title }}
+                                    </Link>
                                 </h3>
                                 <div class="post-meta-wrapper">
                                     <div class="post-meta">
